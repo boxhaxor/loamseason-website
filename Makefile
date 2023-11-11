@@ -1,7 +1,7 @@
 .DEFAULT_GOAL := build
 
 TOOLIMAGENAME=toolbox
-BASE_DOCKER_RUN_COMMAND=docker run --rm -v $(PWD):/workspace/code -it $(TOOLIMAGENAME)
+BASE_DOCKER_RUN_COMMAND=docker run --rm -p 3000:3000 -v $(PWD):/workspace/code -it $(TOOLIMAGENAME)
 
 tools-build:
 	@echo building tools image
