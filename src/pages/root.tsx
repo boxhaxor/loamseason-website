@@ -1,12 +1,12 @@
 import { useLoaderData, Link, Outlet } from "react-router-dom";
-import { getNotes } from "../notes";
+import { getNotes, Note } from "../notes";
 
 export async function loader() {
   return getNotes();
 }
 
 export default function Root() {
-  const notes = useLoaderData();
+  const notes = useLoaderData() as Note[];
 
   return (
     <div style={{ display: "flex" }}>
